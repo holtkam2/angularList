@@ -1,3 +1,27 @@
+.Module {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 70%;
+  background-color: #D3D3D3;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #D3D3D3;
+  border-radius: 3px;
+}
+
+.AddItemForm {
+
+}
+
+.SortBy {
+  clear: both
+}
+
+.FilterBy {
+  clear: both
+}
+
 .List {
 
 }

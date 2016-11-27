@@ -1,9 +1,51 @@
-<div className="List">
-  <div>Add new (a few text boxes will go here and a enter button)</div>
-  <div>Sort by</div>
-    <div ng-click="displayByName()" class="btn pull-left btn-primary btn-default active">Name</div>
-    <div ng-click="displayByPrice()" class="btn pull-left btn-primary btn-default active">Price</div>
-    <div ng-click="displayByCategory()" class="btn pull-left btn-primary btn-default active">Category</div>
-  <div>Filter by (dropdown menu will go here)</div>
-  <div>List of items will go here...</div>
+<div class="Module">
+
+  <div class="AddItemForm">
+    <h3>Add new item to list:</h3>
+    <div>
+      <div class="form-group">
+        <label for="usr">Name:</label>
+        <input type="text" class="form-control" id="usr">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+      <div ng-click="submitNewItem()" class="btn pull-left btn-primary btn-default active">Submit</div>
+    </div>
+  </div>
+
+  <div class="SortBy">
+    <h3>Sort by:</h3>
+    <div>
+      <div ng-click="displayByName()" class="btn pull-left btn-primary btn-default active">Name</div>
+      <div ng-click="displayByPrice()" class="btn pull-left btn-primary btn-default active">Price</div>
+      <div ng-click="displayByCategory()" class="btn pull-left btn-primary btn-default active">Category</div>
+    </div>
+  </div>
+
+  <div class="FilterBy">
+    <h3>Filter by:</h3>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="List">
+    <h3>List</h3>
+    <div ng-repeat = "item in allItemsList">
+      <p>{{item.name}}</p>
+    </div>
+  </div>
+
 </div>
