@@ -4,16 +4,16 @@
     <h3>Add new item to list:</h3>
     <div>
       <div class="form-group">
-        <label for="usr">Name:</label>
-        <input type="text" class="form-control" id="usr">
+        <label for="itemName">Item name</label>
+        <input type="text" ng-model="item.name" class="form-control" id="itemName">
       </div>
       <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
+        <label for="itemPrice">Item price</label>
+        <input type="text" ng-model="item.price" class="form-control" id="itemPrice">
       </div>
       <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
+        <label for="itemCategory">Item category</label>
+        <input type="text" ng-model="item.category" class="form-control" id="itemCategory">
       </div>
       <div ng-click="submitNewItem()" class="btn pull-left btn-primary btn-default active">Submit</div>
     </div>
@@ -22,28 +22,28 @@
   <div class="SortBy">
     <h3>Sort by:</h3>
     <div>
-      <div ng-click="displayByName()" class="btn pull-left btn-primary btn-default active">Name</div>
-      <div ng-click="displayByPrice()" class="btn pull-left btn-primary btn-default active">Price</div>
-      <div ng-click="displayByCategory()" class="btn pull-left btn-primary btn-default active">Category</div>
+      <div ng-click="sortByName()" class="btn pull-left btn-primary btn-default active">Name</div>
+      <div ng-click="sortByPrice()" class="btn pull-left btn-primary btn-default active">Price</div>
+      <div ng-click="sortByCategory()" class="btn pull-left btn-primary btn-default active">Category</div>
     </div>
   </div>
 
   <div class="FilterBy">
-    <h3>Filter by:</h3>
+    <h3>Filter by category:</h3>
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li>Standard</li>
+        <li>Premium</li>
+        <li>Signature</li>
       </ul>
     </div>
   </div>
 
   <div class="List">
     <h3>List</h3>
-    <div ng-repeat = "item in allItemsList">
+    <div ng-repeat = "item in displayedList">
       <p>{{item.name}}</p>
     </div>
   </div>
