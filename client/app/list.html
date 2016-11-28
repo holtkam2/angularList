@@ -31,21 +31,26 @@
   <div class="FilterBy">
     <h3>Filter by category:</h3>
     <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">select category
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li>Standard</li>
-        <li>Premium</li>
-        <li>Signature</li>
+        <li ng-click="filterByStandard()">Standard</li>
+        <li ng-click="filterByPremium()">Premium</li>
+        <li ng-click="filterBySignature()">Signature</li>
       </ul>
     </div>
   </div>
 
   <div class="List">
     <h3>List</h3>
-    <div ng-repeat = "item in displayedItemsList track by item.name">
-      <p>{{item.name}}</p>
-    </div>
+    <table>
+      <tr ng-repeat = "item in displayedItemsList | filter:{category: filteredCategory} track by item.name">
+        <td>{{ item.name }}</td>
+        <td>{{ item.category }}</td>
+        <td>...</td>
+        <td>{{ item.price }}</td>
+      </tr>
+    </table>
   </div>
 
 </div>

@@ -20,15 +20,68 @@ angular.module('myApp.listController', [])
     }
 
     $scope.sortByName = function(){
+      var allNames = [];
+      for (var i = 0; i < $scope.displayedItemsList.length; i++){
+        allNames.push($scope.displayedItemsList[i].name);
+      }
 
+      allNames.sort();
+
+      $scope.displayedItemsList = [];
+
+      for (var j = 0; j < allNames.length; j++){
+        for (var k = 0; k < $scope.allItemsList.length; k++){
+          if (allNames[j] === $scope.allItemsList[k].name){
+            $scope.displayedItemsList.push($scope.allItemsList[k])
+          }
+        }
+      }
     }
 
     $scope.sortByPrice = function(){
+      var allPrices = [];
+      for (var i = 0; i < $scope.displayedItemsList.length; i++){
+        allPrices.push($scope.displayedItemsList[i].price);
+      }
 
+      allPrices.sort();
+
+      $scope.displayedItemsList = [];
+      $scope.allItemsListCopy = [];
+
+      for (var j = 0; j < $scope.allItemsList.length; j++){
+        $scope.allItemsListCopy.push($scope.allItemsList[j])
+      }
+
+      for (var k = 0; k < allPrices.length; k++){
+        for (var l = 0; l < $scope.allItemsListCopy.length; l++){
+          if (allPrices[k] === $scope.allItemsListCopy[l].price){
+            $scope.displayedItemsList.push($scope.allItemsListCopy[l])
+            $scope.allItemsListCopy.splice(l, 1)
+          }
+        }
+      }
     }
 
     $scope.sortByCategory = function(){
 
     }
 
+    $scope.filterByStandard = function(){
+      $scope.filteredCategory = "Standard";
+    }
+
+    $scope.filterByPremium = function(){
+      $scope.filteredCategory = "Premium";
+    }
+
+    $scope.filterBySignature = function(){
+      $scope.filteredCategory = "Signature";
+    }
+
   });
+
+
+
+
+
