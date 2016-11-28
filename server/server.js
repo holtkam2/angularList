@@ -1,3 +1,5 @@
+// a really simple server that just serves up the page and does nothing else
+
 // require express
 var express = require('express');
 
