@@ -1,4 +1,4 @@
-<div class="Module">
+<div class="Module" data-ng-init="init()">
 
   <div class="AddItemForm">
     <h3>Add new item to list:</h3>
@@ -43,7 +43,7 @@
 
   <div class="List">
     <h3>List</h3>
-    <div ng-repeat = "item in displayedList">
+    <div ng-repeat = "item in displayedItemsList track by item.name">
       <p>{{item.name}}</p>
     </div>
   </div>
