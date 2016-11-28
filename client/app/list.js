@@ -64,7 +64,28 @@ angular.module('myApp.listController', [])
     }
 
     $scope.sortByCategory = function(){
+      var allCategories = [];
+      for (var i = 0; i < $scope.displayedItemsList.length; i++){
+        allCategories.push($scope.displayedItemsList[i].category);
+      }
 
+      allCategories.sort();
+
+      $scope.displayedItemsList = [];
+      $scope.allItemsListCopy = [];
+
+      for (var j = 0; j < $scope.allItemsList.length; j++){
+        $scope.allItemsListCopy.push($scope.allItemsList[j])
+      }
+
+      for (var k = 0; k < allCategories.length; k++){
+        for (var l = 0; l < $scope.allItemsListCopy.length; l++){
+          if (allCategories[k] === $scope.allItemsListCopy[l].category){
+            $scope.displayedItemsList.push($scope.allItemsListCopy[l])
+            $scope.allItemsListCopy.splice(l, 1)
+          }
+        }
+      }
     }
 
     $scope.filterByStandard = function(){
