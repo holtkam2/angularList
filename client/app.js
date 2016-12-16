@@ -6,4 +6,8 @@ angular.module('myApp', ['myApp.listController', 'ngRoute'])
       templateUrl: 'app/list.html',
       controller: 'ListController'
     })
+    .when('./route2', {
+      templateUrl: 'app/list.html',
+      controller: 'ListController'
+    })
 })
