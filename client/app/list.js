@@ -69,7 +69,7 @@ angular.module('myApp.listController', [])
           if (allPrices[k] === $scope.allItemsListCopy[l].price){
             $scope.displayedItemsList.push($scope.allItemsListCopy[l])
             // we need to splice out the item from allItemsListCopy after we push it to displayedItemsList
-            // because there may be multiple items with the same price
+            // because there may be multiple items with the same price. Will try to find another solution.
             $scope.allItemsListCopy.splice(l, 1)
           }
         }
